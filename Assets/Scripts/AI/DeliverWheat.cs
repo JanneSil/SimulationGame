@@ -2,20 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpFlour : GoapAction {
+public class DeliverWheat : GoapAction {
 
     bool completed = false;
     float startTime = 0;
     public float workDuration = 2.0f;
     public Inventory windmill;
 
-    public PickUpFlour()
+    public void Start()
     {
-        addPrecondition("hasStock", true);
-        addPrecondition("hasFlour", false);
-        addPrecondition("hasDelivery", false);
+        GameObject loc = GameObject.FindGameObjectWithTag("Windmill");
+        windmill = loc.GetComponent<Inventory>();
+    }
+
+    public DeliverWheat()
+    {
+        addPrecondition("hasWheatDelivery", true);
+        //addPrecondition("hasWheat", true);
         addEffect("doJob", true);
-        name = "PickUpFlour";
+        name = "DeliverWheat";
     }
 
     public override bool checkProceduralPrecondition(GameObject agent)
@@ -49,11 +54,12 @@ public class PickUpFlour : GoapAction {
         if (Time.time - startTime > workDuration)
         {
             Debug.Log("Finished: " + name);
-            GetComponent<Inventory>().flourLevel += 5;
-            windmill.flourLevel -= 5;
+            GetComponent<Inventory>().wheatLevel -= 3;
+            windmill.flourLevel += 3;
             completed = true;
         }
 
         return true;
     }
+
 }

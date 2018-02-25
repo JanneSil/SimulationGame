@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Harvest : GoapAction {
+public class CutWood : GoapAction {
 
     bool completed = false;
     float startTime = 0;
     public float workDuration = 2.0f;
 
-    public Harvest()
+    public CutWood()
     {
-        addEffect("hasWheat", true);
-        name = "Harvest";
+        addPrecondition("hasWoodDelivery", false);
+        addEffect("doJob", true);
+        name = "Woodcut";
     }
 
     public override bool checkProceduralPrecondition(GameObject agent)
@@ -45,10 +46,10 @@ public class Harvest : GoapAction {
         if (Time.time - startTime > workDuration)
         {
             Debug.Log("Finished: " + name);
+            GetComponent<Inventory>().woodLevel++;
             completed = true;
         }
 
         return true;
     }
-
 }

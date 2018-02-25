@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Windmill
+  - FarmPlace
+  - Info
+  - Baker
+  - Farmer
+  - Woodcutter
+  - Farm
+  - WoodChopper
+  - Houses
   layers:
   - Default
   - TransparentFX

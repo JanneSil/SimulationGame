@@ -1,10 +1,10 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
 
-public class Farmer : MonoBehaviour, IGoap
-{
+public class Woodcutter : MonoBehaviour, IGoap {
+
     NavMeshAgent agent;
     Vector3 previousDestination;
     Inventory inv;
@@ -13,11 +13,14 @@ public class Farmer : MonoBehaviour, IGoap
     {
         agent = GetComponent<NavMeshAgent>();
         inv = GetComponent<Inventory>();
+
     }
 
     public HashSet<KeyValuePair<string, object>> GetWorldState()
     {
         HashSet<KeyValuePair<string, object>> worldData = new HashSet<KeyValuePair<string, object>>();
+
+        worldData.Add(new KeyValuePair<string, object>("hasWoodDelivery", (inv.woodLevel > 2)));
 
         return worldData;
     }

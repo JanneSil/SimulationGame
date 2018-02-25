@@ -2,18 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BakeBread : GoapAction {
+public class DeliverWood : GoapAction {
 
     bool completed = false;
     float startTime = 0;
     public float workDuration = 2.0f;
+    public Inventory windmill;
 
-    public BakeBread()
+    public void Start()
     {
-        addPrecondition("hasFlour", true);
-        addPrecondition("hasDelivery", false);
+        GameObject loc = GameObject.FindGameObjectWithTag("Windmill");
+        windmill = loc.GetComponent<Inventory>();
+    }
+
+    public DeliverWood()
+    {
+        addPrecondition("hasWoodDelivery", true);
         addEffect("doJob", true);
-        name = "BakeBread";
+        name = "DeliverWood";
     }
 
     public override bool checkProceduralPrecondition(GameObject agent)
@@ -47,12 +53,11 @@ public class BakeBread : GoapAction {
         if (Time.time - startTime > workDuration)
         {
             Debug.Log("Finished: " + name);
-            GetComponent<Inventory>().flourLevel -= 2;
-            GetComponent<Inventory>().breadLevel += 1;
+            GetComponent<Inventory>().woodLevel -= 3;
+            windmill.woodLevel += 3;
             completed = true;
         }
 
         return true;
     }
-
 }

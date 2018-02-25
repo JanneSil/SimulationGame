@@ -6,9 +6,16 @@ public class DeliverBread : GoapAction {
 
 	bool completed = false;
 	float startTime = 0;
-	public float workDuration = 2; // seconds
-	
-	public DeliverBread () {
+	public float workDuration = 2; 
+    public Inventory windmill;
+
+    public void Start()
+    {
+        GameObject loc = GameObject.FindGameObjectWithTag("Windmill");
+        windmill = loc.GetComponent<Inventory>();
+    }
+
+    public DeliverBread () {
 		addPrecondition ("hasDelivery", true); 
 		addEffect ("doJob", true);
 		name = "DeliverBread";
@@ -46,7 +53,7 @@ public class DeliverBread : GoapAction {
 		if (Time.time - startTime > workDuration) 
 		{
 			Debug.Log("Finished: " + name);
-			GetComponent<Inventory>().breadLevel -= 2;
+			windmill.breadLevel -= 2;
 			completed = true;
 		}
 		return true;
