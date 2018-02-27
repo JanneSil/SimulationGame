@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33080091182456506}
   - component: {fileID: 23923253169802654}
   - component: {fileID: 64582551159415498}
-  - component: {fileID: 114567357528710352}
   m_Layer: 0
   m_Name: Storage
   m_TagString: Untagged
@@ -41,6 +40,7 @@ GameObject:
   - component: {fileID: 33181199388962196}
   - component: {fileID: 65831714844714504}
   - component: {fileID: 23402732367164068}
+  - component: {fileID: 114476788929234694}
   m_Layer: 0
   m_Name: Door
   m_TagString: Windmill
@@ -81,7 +81,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803517136607570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -183,12 +183,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114567357528710352
+--- !u!114 &114476788929234694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1309223617328410}
+  m_GameObject: {fileID: 1803517136607570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 020ec667d6c7341e4a8a849a15cab9fa, type: 3}

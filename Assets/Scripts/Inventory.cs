@@ -19,9 +19,9 @@ public class Inventory : MonoBehaviour {
         {
             GUI.Box(new Rect(0, 0 + drawOffset, 100, 100), "" + name);
             GUI.Label(new Rect(10, 20 + drawOffset, 100, 20), "Flour: " + flourLevel);
-            GUI.Label(new Rect(10, 35 + drawOffset, 100, 20), "Bread: " + breadLevel);
+            //GUI.Label(new Rect(10, 35 + drawOffset, 100, 20), "Bread: " + breadLevel);
             //GUI.Label(new Rect(10, 50 + drawOffset, 100, 20), "Wheat: " + wheatLevel);
-            GUI.Label(new Rect(10, 50 + drawOffset, 100, 20), "Wood: " + woodLevel);
+            GUI.Label(new Rect(10, 35 + drawOffset, 100, 20), "Wood: " + woodLevel);
         }
     }
 }

@@ -24,7 +24,7 @@ public class Worker : MonoBehaviour, IGoap
 
         worldData.Add(new KeyValuePair<string, object>("hasStock", (windmill.flourLevel > 4)));
         worldData.Add(new KeyValuePair<string, object>("hasFlour", (inv.flourLevel > 1) ));
-        worldData.Add(new KeyValuePair<string, object>("hasDelivery", (windmill.breadLevel > 1)));
+        worldData.Add(new KeyValuePair<string, object>("hasDelivery", (inv.breadLevel > 1)));
 
 
         return worldData;

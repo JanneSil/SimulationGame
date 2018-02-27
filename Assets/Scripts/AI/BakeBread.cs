@@ -55,7 +55,7 @@ public class BakeBread : GoapAction {
         {
             Debug.Log("Finished: " + name);
             GetComponent<Inventory>().flourLevel -= 2;
-            windmill.breadLevel += 1;
+            GetComponent<Inventory>().breadLevel += 1;
             completed = true;
         }
 

@@ -48,14 +48,19 @@ public class PickUpFlour : GoapAction {
     {
         if (startTime == 0)
         {
+           
             Debug.Log("Starting: " + name);
             startTime = Time.time;
         }
         if (Time.time - startTime > workDuration)
         {
             Debug.Log("Finished: " + name);
-            GetComponent<Inventory>().flourLevel += 5;
-            windmill.flourLevel -= 5;
+
+            if (windmill.flourLevel > 4)
+            {
+                GetComponent<Inventory>().flourLevel += 5;
+                windmill.flourLevel -= 5;
+            }
             completed = true;
         }
 

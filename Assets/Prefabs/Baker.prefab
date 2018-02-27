@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 020ec667d6c7341e4a8a849a15cab9fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flourLevel: 5
+  flourLevel: 0
   breadLevel: 0
   wheatLevel: 0
   woodLevel: 0
@@ -285,7 +285,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1655541454380320}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.05
   m_Speed: 15
   m_Acceleration: 8
   avoidancePriority: 50

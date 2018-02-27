@@ -16,7 +16,7 @@ public class DeliverBread : GoapAction {
     }
 
     public DeliverBread () {
-		addPrecondition ("hasDelivery", true); 
+		addPrecondition ("hasDelivery", true);
 		addEffect ("doJob", true);
 		name = "DeliverBread";
 	}
@@ -47,15 +47,16 @@ public class DeliverBread : GoapAction {
 		if (startTime == 0)
 		{
 			Debug.Log("Starting: " + name);
-			startTime = Time.time;
-		}
+            startTime = Time.time;
+
+        }
 
 		if (Time.time - startTime > workDuration) 
 		{
 			Debug.Log("Finished: " + name);
-			windmill.breadLevel -= 2;
-			completed = true;
-		}
+            GetComponent<Inventory>().breadLevel -= 2;
+            completed = true;
+        }
 		return true;
 	}
 }
